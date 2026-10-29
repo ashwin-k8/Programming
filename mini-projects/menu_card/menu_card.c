@@ -1,6 +1,6 @@
 #include<stdio.h>
 int main(){
-int choice, lists, qty, price, again, total = 0;
+int choice, lists, total = 0;
 
 printf("*******************************************\n");
 printf("|                ASCETO CAFE              |\n");
