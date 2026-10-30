@@ -1,18 +1,19 @@
 #include<stdio.h>
 int main(){
-int choice, lists, qty, price, again, total = 0;
+int choice, lists, qty, price, payment, total = 0;
 
 printf("*******************************************\n");
 printf("|                ASCETO CAFE              |\n");
 printf("*******************************************\n");
 printf("                    MENU                   \n");
 printf("_________________________________________\n\n");
-
+do
+{
 printf("1.COFFEE DRINKS\n");
 printf("2.SALADS\n");
 printf("3.SOUPS\n");
 printf("4.DESSERTS\n");
-printf("\n5.Exit...\n");
+printf("\n5.Make payment\n");
 
 printf("-----------------\n");
 printf("Enter your choice: \n");
@@ -34,21 +35,33 @@ case 1:
        {
        case 1:
         printf("1.Espresso     Rs.50/-\n");
+        price = 50;
         break;
         case 2:
         printf("2.Latte        Rs.60/-\n");
+        price = 60;
         break;
         case 3:
         printf("3.Long black   Rs.80/-\n");
+        price = 80;
         break;
         case 4:
         printf("4.Iced Coffee  Rs.55/-\n");
+        price = 55;
         break;
         default:
         printf("Invalid item!\n");
         break;
        }
+       if(price > 0)
+        {
+          printf("Enter the quantity: \n");
+          scanf("%d", &qty);
+          total = total + (qty * price);
+          printf("amount: Rs. %d\n", qty * price);
+        }
   break;
+  
 case 2:
 printf("*********SALADS************\n\n");
 printf("1.AVOCADO      Rs.40/-\n");
@@ -129,10 +142,24 @@ scanf("%d", &lists);
       printf("Invalid item!\n");
         break;
       } 
-      
+case 5: 
+printf(" PAYMENT \n");
+printf("Toatal price  = %d\n", total);
+printf("enter the amount: \n");
+scanf("%d", &payment);
+if(payment >= total)
+{
+  printf("thank you, wisit again *__*\n");
+} 
+else{
+  printf("payment error!. Try again.\n");
+} break;    
 default:
-  break;
+printf("Invalid choice!.\n");
+break;
 }
+}
+while(choice != 5);
 
 
 }
