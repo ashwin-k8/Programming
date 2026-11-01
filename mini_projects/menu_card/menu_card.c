@@ -63,6 +63,7 @@ case 1:
   break;
   
 case 2:
+
 printf("*********SALADS************\n\n");
 printf("1.AVOCADO      Rs.40/-\n");
 printf("2.CUCUMBER     Rs.55/-\n");
@@ -74,20 +75,31 @@ scanf("%d", &lists);
       {
       case 1:
         printf("1.AVOCADO      Rs.40/-\n");
+        price = 40;
         break;
       case 2:
         printf("2.CUCUMBER     Rs.55/-\n");
+        price = 55;
         break;
         case 3:
         printf("3.CARROTS      Rs.60/-\n");
+        price = 60;
         break;
         case 4:
         printf("4.MIXED        Rs.75/-\n");
-        break; 
+        price = 75;
+        break;
       default:
       printf("Invalid item!\n");
-        break;
+      break;  
       }
+       if(price > 0)
+        {
+          printf("Enter the quantity: \n");
+          scanf("%d", &qty);
+          total = total + (qty * price);
+          printf("amount: Rs. %d\n", qty * price);
+        }
   break;
 case 3:
 printf("*********Soups************\n\n");
@@ -101,20 +113,31 @@ scanf("%d", &lists);
       {
       case 1:
         printf("1.PUMPKIN      Rs.70/-\n");
+        price = 70;
         break;
         case 2:
         printf("2.CARROT       Rs.65/-\n");
+        price = 65;
         break;
         case 3:
         printf("3.CHICKEN      Rs.80/-\n");
+        price = 80;
         break;
         case 4:
         printf("4.BUTTER       Rs.75/-\n");
+        price = 75;
         break; 
       default:
       printf("Invalid item!\n");
         break;
       }
+      if(price > 0)
+        {
+          printf("Enter the quantity: \n");
+          scanf("%d", &qty);
+          total = total + (qty * price);
+          printf("amount: Rs. %d\n", qty * price);
+        }
   break;
 case 4:
 printf("*********DESSERTS************\n\n");
@@ -128,20 +151,32 @@ scanf("%d", &lists);
       {
       case 1:
         printf("1.CHOCOLATE CHEESECAKE  Rs.60/-\n");
+        price = 60;
         break;
         case 2:
         printf("2.BANANA BAOT PIE       Rs.45/-\n");
+        price = 45;
         break;
         case 3:
         printf("3.STRAWBERRY PUDDING    Rs.55/-\n");
+        price = 55;
         break;
         case 4:
-        printf("4.BROWNIE GELATO        Rs.45/-\n");
+        printf("4.BROWNIE GELATO        Rs.95/-\n");
+        price = 95;
         break; 
       default:
       printf("Invalid item!\n");
         break;
-      } 
+      }
+      if(price > 0)
+        {
+          printf("Enter the quantity: \n");
+          scanf("%d", &qty);
+          total = total + (qty * price);
+          printf("amount: Rs. %d\n", qty * price);
+        }
+   break; 
 case 5: 
 printf(" PAYMENT \n");
 printf("Toatal price  = %d\n", total);
