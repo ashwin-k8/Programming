@@ -21,7 +21,7 @@ scanf("%d", &choice);
 if(choice <1 || choice > 5){
 printf("Choose the correct option.\n\n");
 }
-switch (choice)
+switch (choice)                                           //outer switch for main menu.
 {
 case 1:
   printf("*********COFFEE DRINKS************\n\n");
@@ -31,7 +31,7 @@ case 1:
   printf("4.Iced Coffee  Rs.55/-\n");
   printf("Enter the item: \n");
   scanf("%d", &lists);
-       switch (lists)
+       switch (lists)                                    //inner switch for sub menu.
        {
        case 1:
         printf("1.Espresso     Rs.50/-\n");
@@ -179,18 +179,27 @@ scanf("%d", &lists);
    break; 
 case 5: 
 printf(" PAYMENT \n");
-printf("Toatal price  = %d\n", total);
-printf("enter the amount: \n");
-scanf("%d", &payment);
-if(payment >= total)
+printf("Toatal price  = %d\n", total);                // collect the final price of each slected items and display final price.
+if (total == 0)                                       // conditon if the user enter the payment option first without slecting the item.
 {
-  printf("thank you, wisit again *__*\n");
-} 
-else{
-  printf("payment error!. Try again.\n");
-} break;    
+  printf("Error!, choose the item first. \n");
+}
+else
+{
+  printf("enter the amount: \n");
+  scanf("%d", &payment);
+  if(payment == total)                                // conditon to check wether the amount which the user enters is equal to total price. 
+  {
+    printf("thank you, wisit again *__*\n");
+  }
+  else
+  {
+    printf("payment error!. Try again.\n");
+  }
+
+}break;
 default:
-printf("Invalid choice!.\n");
+printf("Invalid choice!. \n");
 break;
 }
 }
